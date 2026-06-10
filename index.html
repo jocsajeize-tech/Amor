@@ -18,7 +18,14 @@
         img { width: 100%; border-radius: 15px; margin-top: 20px; border: 4px solid white; transition: 0.5s; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         img:hover { transform: scale(1.03); box-shadow: 0 0 20px rgba(216, 27, 96, 0.5); }
         .carta-texto { font-size: 1.15rem; line-height: 1.7; color: #444; margin-top: 15px; text-align: justify; }
-        .efeito-queda { position: fixed; top: -10px; font-size: 20px; user-select: none; z-index: 1; pointer-events: none; text-shadow: 0 0 5px rgba(255,255,255,0.8); }
+        
+        /* Estilo da chuva de Te Amo e Coração */
+        .efeito-queda { 
+            position: fixed; top: -10px; font-family: 'Dancing Script', cursive; 
+            font-size: 24px; color: #d81b60; font-weight: bold; 
+            user-select: none; z-index: 1; pointer-events: none; 
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
@@ -63,22 +70,22 @@
         }
     }
     function iniciarChuva() {
-        const itens = ['❤️', 'Eu Te Amo! 😍'];
+        const itens = ['❤️', 'Te Amo'];
         setInterval(() => {
             const item = document.createElement('div');
             item.className = 'efeito-queda';
             item.innerHTML = itens[Math.floor(Math.random() * itens.length)];
             item.style.left = Math.random() * 100 + 'vw';
-            item.style.animation = 'fall 4s linear';
+            item.style.animation = 'fall 5s linear';
             document.body.appendChild(item);
-            setTimeout(() => item.remove(), 4000);
-        }, 600);
+            setTimeout(() => item.remove(), 5000);
+        }, 700);
     }
 </script>
 <style>
     @keyframes fall { 
         0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; } 
-        100% { transform: translateY(100vh) rotate(360deg); opacity: 0; } 
+        100% { transform: translateY(100vh) rotate(10deg); opacity: 0; } 
     }
 </style>
 </body>
