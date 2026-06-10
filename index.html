@@ -6,24 +6,40 @@
     <title>O Segredo da Guerreira 🌻</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display&display=swap');
-        body { background: linear-gradient(135deg, #fce4ec, #f8bbd0); animation: pulse 10s infinite alternate; font-family: 'Playfair Display', serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; color: #4a148c; overflow-x: hidden; }
+        
+        body { 
+            background: linear-gradient(135deg, #fce4ec, #f8bbd0); 
+            animation: pulse 10s infinite alternate; 
+            font-family: 'Playfair Display', serif; 
+            display: flex; justify-content: center; align-items: center; 
+            min-height: 100vh; margin: 0; color: #4a148c; overflow-x: hidden; 
+        }
+        
         @keyframes pulse { from { filter: brightness(1); } to { filter: brightness(1.05); } }
-        .container { text-align: center; background: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(216, 27, 96, 0.2); width: 90%; max-width: 450px; z-index: 10; transition: transform 0.5s; }
-        h1, h2 { font-family: 'Dancing Script', cursive; color: #d81b60; animation: fadeIn 2s; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .container { 
+            text-align: center; background: rgba(255, 255, 255, 0.95); 
+            padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(216, 27, 96, 0.2); 
+            width: 90%; max-width: 450px; z-index: 10; position: relative;
+        }
+
+        h1, h2 { font-family: 'Dancing Script', cursive; color: #d81b60; }
+        
         input { padding: 12px; width: 80%; margin-bottom: 15px; border: 2px solid #f06292; border-radius: 25px; text-align: center; font-size: 1rem; }
         button { padding: 10px 25px; background-color: #d81b60; color: white; border: none; border-radius: 25px; cursor: pointer; font-size: 1rem; transition: 0.3s; }
         button:hover { background-color: #ad1457; transform: scale(1.05); }
+        
         #conteudo-secreto { display: none; }
-        img { width: 100%; border-radius: 15px; margin-top: 20px; border: 4px solid white; transition: 0.5s; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        img:hover { transform: scale(1.03); box-shadow: 0 0 20px rgba(216, 27, 96, 0.5); }
+        
+        img { width: 100%; border-radius: 15px; margin-top: 20px; border: 4px solid white; transition: 0.5s; }
         .carta-texto { font-size: 1.15rem; line-height: 1.7; color: #444; margin-top: 15px; text-align: justify; }
         
-        /* Estilo da chuva */
+        /* Chuva caindo em toda a largura */
         .efeito-queda { 
-            position: fixed; top: -10px; font-family: 'Dancing Script', cursive; 
-            font-size: 24px; color: #d81b60; font-weight: bold; 
+            position: fixed; top: -50px; font-family: 'Dancing Script', cursive; 
+            font-size: 25px; color: #d81b60; font-weight: bold; 
             user-select: none; z-index: 1; pointer-events: none; 
+            animation: fall linear forwards;
         }
     </style>
 </head>
@@ -41,9 +57,7 @@
 
 <div class="container" id="conteudo-secreto">
     <h1>Feliz Dia dos Namorados! ❤️</h1>
-    
     <iframe width="100%" height="200" src="https://www.youtube.com/embed/9Zle7HkIVWk?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
     <p class="carta-texto">
         Minha linda, meu amor, minha nega... 🌻💛<br><br>
         O girassol que te dei representa todo o colorido e o charme que você trouxe para a minha vida. 🎨✨ Sei que não sou perfeito e que erro muitas vezes, mas saiba que em todas as minhas tentativas, o meu único objetivo é sempre te fazer feliz e acertar com você. 🥰🙏<br><br>
@@ -53,14 +67,12 @@
         Sei que você queria ganhar um buquê de flores... 💐 confesso que, na correria, fiquei sem ideias, mas nessa madrugada surgiu essa inspiração de fazer algo diferente. Espero, do fundo do coração, que você goste. E, por favor, não chore, porque eu já estou chorando só de escrever tudo isso! 😂😭🤧<br><br>
         Obrigado por tudo e por muito mais. Feliz Dia dos Namorados! ❤️🌹💍
     </p>
-    
     <img src="1781068500315.png" alt="Nossa foto">
 </div>
 
 <script>
     function verificar() {
-        const senha = document.getElementById('senha').value;
-        if (senha === "03032002") {
+        if (document.getElementById('senha').value === "03032002") {
             document.getElementById('login').style.display = 'none';
             document.getElementById('conteudo-secreto').style.display = 'block';
             iniciarChuva();
@@ -74,17 +86,16 @@
             const item = document.createElement('div');
             item.className = 'efeito-queda';
             item.innerHTML = itens[Math.floor(Math.random() * itens.length)];
-            item.style.left = Math.random() * 100 + 'vw';
-            item.style.animation = 'fall 5s linear';
+            item.style.left = Math.random() * 95 + 'vw';
+            item.style.animationDuration = (Math.random() * 3 + 4) + 's';
             document.body.appendChild(item);
-            setTimeout(() => item.remove(), 5000);
-        }, 700);
+            setTimeout(() => item.remove(), 7000);
+        }, 300);
     }
 </script>
 <style>
     @keyframes fall { 
-        0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; } 
-        100% { transform: translateY(100vh) rotate(10deg); opacity: 0; } 
+        to { transform: translateY(110vh) rotate(15deg); } 
     }
 </style>
 </body>
