@@ -18,7 +18,7 @@
         img { width: 100%; border-radius: 15px; margin-top: 20px; border: 4px solid white; transition: 0.5s; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         img:hover { transform: scale(1.03); box-shadow: 0 0 20px rgba(216, 27, 96, 0.5); }
         .carta-texto { font-size: 1.15rem; line-height: 1.7; color: #444; margin-top: 15px; text-align: justify; }
-        .heart { position: fixed; top: -10px; color: #d81b60; font-size: 20px; user-select: none; z-index: 1; pointer-events: none; text-shadow: 0 0 5px rgba(255,255,255,0.8); }
+        .efeito-queda { position: fixed; top: -10px; font-size: 20px; user-select: none; z-index: 1; pointer-events: none; text-shadow: 0 0 5px rgba(255,255,255,0.8); }
     </style>
 </head>
 <body>
@@ -63,15 +63,16 @@
         }
     }
     function iniciarChuva() {
+        const itens = ['❤️', 'Eu Te Amo! 😍'];
         setInterval(() => {
-            const heart = document.createElement('div');
-            heart.className = 'heart';
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animation = 'fall 4s linear';
-            document.body.appendChild(heart);
-            setTimeout(() => heart.remove(), 4000);
-        }, 400);
+            const item = document.createElement('div');
+            item.className = 'efeito-queda';
+            item.innerHTML = itens[Math.floor(Math.random() * itens.length)];
+            item.style.left = Math.random() * 100 + 'vw';
+            item.style.animation = 'fall 4s linear';
+            document.body.appendChild(item);
+            setTimeout(() => item.remove(), 4000);
+        }, 600);
     }
 </script>
 <style>
