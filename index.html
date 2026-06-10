@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,40 +7,17 @@
     <title>O Segredo da Guerreira 🌻</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display&display=swap');
-        
-        /* Fundo com efeito de pulsação suave */
-        body { 
-            background: linear-gradient(135deg, #fce4ec, #f8bbd0); 
-            animation: pulse 10s infinite alternate;
-            font-family: 'Playfair Display', serif; 
-            display: flex; justify-content: center; align-items: center; 
-            min-height: 100vh; margin: 0; color: #4a148c; overflow-x: hidden; 
-        }
+        body { background: linear-gradient(135deg, #fce4ec, #f8bbd0); animation: pulse 10s infinite alternate; font-family: 'Playfair Display', serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; color: #4a148c; overflow-x: hidden; }
         @keyframes pulse { from { filter: brightness(1); } to { filter: brightness(1.05); } }
-
-        .container { 
-            text-align: center; background: rgba(255, 255, 255, 0.95); 
-            padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(216, 27, 96, 0.2); 
-            width: 90%; max-width: 450px; z-index: 10; 
-            transition: transform 0.5s;
-        }
-
+        .container { text-align: center; background: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(216, 27, 96, 0.2); width: 90%; max-width: 450px; z-index: 10; transition: transform 0.5s; }
         h1, h2 { font-family: 'Dancing Script', cursive; color: #d81b60; animation: fadeIn 2s; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        
         input { padding: 12px; width: 80%; margin-bottom: 15px; border: 2px solid #f06292; border-radius: 25px; text-align: center; font-size: 1rem; }
         button { padding: 10px 25px; background-color: #d81b60; color: white; border: none; border-radius: 25px; cursor: pointer; font-size: 1rem; transition: 0.3s; }
         button:hover { background-color: #ad1457; transform: scale(1.05); }
-        
         #conteudo-secreto { display: none; }
-        
-        /* Foto com brilho ao passar o mouse */
-        img { 
-            width: 100%; border-radius: 15px; margin-top: 20px; border: 4px solid white; 
-            transition: 0.5s; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
+        img { width: 100%; border-radius: 15px; margin-top: 20px; border: 4px solid white; transition: 0.5s; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         img:hover { transform: scale(1.03); box-shadow: 0 0 20px rgba(216, 27, 96, 0.5); }
-
         .carta-texto { font-size: 1.15rem; line-height: 1.7; color: #444; margin-top: 15px; text-align: justify; }
         .heart { position: fixed; top: -10px; color: #d81b60; font-size: 20px; user-select: none; z-index: 1; pointer-events: none; text-shadow: 0 0 5px rgba(255,255,255,0.8); }
     </style>
@@ -59,13 +37,14 @@
 <div class="container" id="conteudo-secreto">
     <h1>Feliz Dia dos Namorados! ❤️</h1>
     
-    <iframe width="100%" height="200" src="https://www.youtube.com/embed/fQv-5OuLODE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <!-- Player da música nova -->
+    <iframe width="100%" height="200" src="https://www.youtube.com/embed/9Zle7HkIVWk?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
     <p class="carta-texto">
         Minha linda, meu amor, minha nega... 🌻💛<br><br>
         O girassol que te dei representa todo o colorido e o charme que você trouxe para a minha vida. 🎨✨ Sei que não sou perfeito e que erro muitas vezes, mas saiba que em todas as minhas tentativas, o meu único objetivo é sempre te fazer feliz e acertar com você. 🥰🙏<br><br>
         Eu admiro a sua força desde o primeiro dia: desde que nasceu, enfrentou lutas que muitas teriam desistido, mas você está aqui. Você é o meu pilar de sustentação, o meu chão. Sem você, eu não sou ninguém; a vida perde o sabor e não tem graça nenhuma. 🛡️🔥✨<br><br>
-        A sua vontade de viver me contagiou desde o dia em que te conheci. Hoje, sinto que tudo o que passei foi apenas para chegar até você. Você me devolveu a vontade de viver, de recomeçar e de sonhar com um futuro. 🌈💖🚀<br><br>
+        A sua vontade de viver me contagiou desde o dia em que te conheci. Até então, minha vida era escura e sem cor, por causa de todos os processos que enfrentei. 🌑 Hoje, sinto que tudo o que passei foi apenas para chegar até você. Você me devolveu a vontade de viver, de recomeçar e de sonhar com um futuro. 🌈💖🚀<br><br>
         Por isso, peço por favor: não pare de colorir os meus dias. Não deixe que o meu jeito, às vezes grosseiro, ou os meus defeitos te afastem. Nunca deixe de estar perto de mim. 🥺🤞❤️<br><br>
         Obrigado por tudo e por muito mais. Feliz Dia dos Namorados! ❤️🌹💍
     </p>
@@ -84,7 +63,6 @@
             alert("Hum, essa não é a data mágica! Tente de novo, meu bem.");
         }
     }
-
     function iniciarChuva() {
         setInterval(() => {
             const heart = document.createElement('div');
