@@ -3,39 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para você, meu amor</title>
+    <title>Para você, meu amor ❤️</title>
     <style>
-        body { font-family: 'Arial', sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #fdf2f2; margin: 0; }
-        .container { text-align: center; background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 80%; max-width: 400px; }
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display&display=swap');
+
+        body {
+            background: linear-gradient(135deg, #fce4ec, #f8bbd0);
+            font-family: 'Playfair Display', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            color: #4a148c;
+        }
+
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2.5rem;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            width: 85%;
+            max-width: 450px;
+            border: 2px solid #fff;
+        }
+
+        h1, h2 { font-family: 'Dancing Script', cursive; color: #d81b60; }
+        
+        input {
+            padding: 12px;
+            width: 70%;
+            margin-bottom: 15px;
+            border: 2px solid #f06292;
+            border-radius: 25px;
+            text-align: center;
+            outline: none;
+        }
+
+        button {
+            padding: 12px 30px;
+            background-color: #d81b60;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.2s;
+        }
+
+        button:hover { transform: scale(1.05); background-color: #ad1457; }
+
         #conteudo-secreto { display: none; }
-        input { padding: 10px; width: 80%; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 5px; }
-        button { padding: 10px 20px; background-color: #ff4d6d; color: white; border: none; border-radius: 5px; cursor: pointer; }
-        img { width: 100%; border-radius: 10px; margin-top: 15px; }
+        
+        img {
+            width: 100%;
+            border-radius: 15px;
+            margin-top: 20px;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .carta-texto { font-size: 1.2rem; line-height: 1.6; color: #555; }
     </style>
 </head>
 <body>
 
 <div class="container" id="login">
     <h2>🔐 Entrada Secreta</h2>
-    <p>Digite nossa senha para ver o presente:</p>
-    <input type="password" id="senha" placeholder="Sua senha">
-    <button onclick="verificar()">Entrar</button>
+    <p>Meu amor, digite nossa senha para acessar:</p>
+    <input type="password" id="senha" placeholder="Senha">
+    <br>
+    <button onclick="verificar()">Abrir Surpresa</button>
 </div>
 
 <div class="container" id="conteudo-secreto">
     <h1>Feliz Dia dos Namorados! ❤️</h1>
-    <p>Aqui você coloca o seu texto da carta... escreva algo bem emocionante!</p>
-    <img src="SUA_FOTO.jpg" alt="Nossa foto">
+    <p class="carta-texto">
+        Aqui vai o texto da sua carta! <br>
+        Escreva algo que venha do coração. <br>
+        Cada palavra conta.
+    </p>
+    <img src="https://via.placeholder.com/400x300" alt="Nossa foto">
 </div>
 
 <script>
     function verificar() {
         const senha = document.getElementById('senha').value;
-        if (senha === "1234") { // AQUI VOCÊ MUDA A SENHA
+        if (senha === "sua-senha") {
             document.getElementById('login').style.display = 'none';
             document.getElementById('conteudo-secreto').style.display = 'block';
         } else {
-            alert("Senha incorreta, meu amor!");
+            alert("Senha incorreta, tente novamente com carinho!");
         }
     }
 </script>
