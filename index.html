@@ -6,41 +6,17 @@
     <title>O Segredo da Guerreira 🌻</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display&display=swap');
-        
-        body { 
-            background: linear-gradient(135deg, #fce4ec, #f8bbd0); 
-            animation: pulse 10s infinite alternate; 
-            font-family: 'Playfair Display', serif; 
-            display: flex; justify-content: center; align-items: center; 
-            min-height: 100vh; margin: 0; color: #4a148c; overflow-x: hidden; 
-        }
-        
+        body { background: linear-gradient(135deg, #fce4ec, #f8bbd0); animation: pulse 10s infinite alternate; font-family: 'Playfair Display', serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; color: #4a148c; overflow-x: hidden; }
         @keyframes pulse { from { filter: brightness(1); } to { filter: brightness(1.05); } }
-
-        .container { 
-            text-align: center; background: rgba(255, 255, 255, 0.95); 
-            padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(216, 27, 96, 0.2); 
-            width: 90%; max-width: 450px; z-index: 10; position: relative;
-        }
-
+        .container { text-align: center; background: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(216, 27, 96, 0.2); width: 90%; max-width: 450px; z-index: 10; position: relative; }
         h1, h2 { font-family: 'Dancing Script', cursive; color: #d81b60; }
-        
         input { padding: 12px; width: 80%; margin-bottom: 15px; border: 2px solid #f06292; border-radius: 25px; text-align: center; font-size: 1rem; }
         button { padding: 10px 25px; background-color: #d81b60; color: white; border: none; border-radius: 25px; cursor: pointer; font-size: 1rem; transition: 0.3s; }
         button:hover { background-color: #ad1457; transform: scale(1.05); }
-        
         #conteudo-secreto { display: none; }
-        
         img { width: 100%; border-radius: 15px; margin-top: 20px; border: 4px solid white; transition: 0.5s; }
         .carta-texto { font-size: 1.15rem; line-height: 1.7; color: #444; margin-top: 15px; text-align: justify; }
-        
-        /* Chuva caindo em toda a largura */
-        .efeito-queda { 
-            position: fixed; top: -50px; font-family: 'Dancing Script', cursive; 
-            font-size: 25px; color: #d81b60; font-weight: bold; 
-            user-select: none; z-index: 1; pointer-events: none; 
-            animation: fall linear forwards;
-        }
+        .efeito-queda { position: fixed; top: -50px; font-family: 'Dancing Script', cursive; font-size: 25px; color: #d81b60; font-weight: bold; user-select: none; z-index: 1; pointer-events: none; animation: fall linear forwards; }
     </style>
 </head>
 <body>
@@ -94,9 +70,7 @@
     }
 </script>
 <style>
-    @keyframes fall { 
-        to { transform: translateY(110vh) rotate(15deg); } 
-    }
+    @keyframes fall { to { transform: translateY(110vh) rotate(15deg); } }
 </style>
 </body>
 </html>
